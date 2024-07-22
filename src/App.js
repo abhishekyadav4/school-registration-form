@@ -22,6 +22,7 @@ function App() {
           </div>
         </div>
       </nav>
+      
       <section>
         <div className='photo'>
           <h4>photo</h4>
@@ -211,7 +212,7 @@ function App() {
                 </div>
                 {/* second row  */}
                 <div className='formData fc'>
-                <div className='form-label common-label'>  <label htmlFor='dist'>  Dist :</label></div>
+                  <div className='form-label common-label'>  <label htmlFor='dist'>  Dist :</label></div>
                   <div className=' common-input' >   <input type='text' name='dist' /></div>
                   {/* second column  */}
                   <div className='form-label common-label '>  <label htmlFor='pinCode'> Pin Code :</label></div>
@@ -231,18 +232,106 @@ function App() {
                   <div className=' common-input '  >   <input type='text' name='firtAdmission' /></div>
                 </div>
               </li>
-
-
-              <p className='p-txt'> <span>DECLARATION </span>: I ……………………………………………………………………….. may be declare that the particulars given by  me are true and correct. I further declare that I shall abide by the rules and regulations as well as discipline of the School strictly without being prejudiced.</p>
-
-
             </ol>
 
+            <p className='p-txt'> DECLARATION : I <span><input type='text' name='declaration' /></span>. may be declare that the particulars given by  me are true and correct. I further declare that I shall abide by the rules and regulations as well as discipline of the School strictly without being prejudiced.</p>
+
+
+
+            <div className='formData fc signature'>
+              <div className='common-sign'>
+                <div className='sign-input ' >   <input type='text' name='post' /></div>
+                <div className='sign-label'>  <label htmlFor='post'>Signature of the Student</label></div>
+              </div>
+              {/* second column  */}
+              <div className='common-sign'>
+                <div className=' sign-input' >   <input type='text' name='ps' /></div>
+                <div className='sign-label '>  <label htmlFor='ps'>Signature of Parents or Gaurdians </label></div>
+              </div>
+              {/* third column  */}
+              <div className='common-sign' >
+
+                <div className=' sign-input' >   <input type='text' name='block' /></div>
+                <div className=' sign-label'>  <label htmlFor='block'> Signature of Head Master</label></div>
+              </div>
+            </div>
+
+            <hr className='btm'></hr>
+
+            {/* form footer  */}
+
+            <div className='footer'>
+              <div className='footer-section'>
+                <label htmlFor='formNo'>Form No :</label>
+                <input type='text' name='formNo' />
+              </div>
+              {/* second column  */}
+              <div className=' footer-section'>
+                <label htmlFor='date'>Date:</label>
+                <input type='date' name='date' />
+              </div>
+            </div>
+
+            {/* footer second */}
+
+            <div className='footerSecond'>
+
+              <div >
+                <label htmlFor='receivedAppNo'>Received application Form No  :</label>
+                <input type='text' name='receivedAppNo' />
+              </div>
+              {/* second column  */}
+              <div >
+                <label htmlFor='admissionNO'>Admission No:</label>
+                <input type='text' name='admissionNO' />
+              </div>
+              <div >
+                <label htmlFor='dateThree'>Date:</label>
+                <input type='date' name='dateThree' />
+              </div>
+              <div >
+                <label htmlFor='class'>Class:</label>
+                <input type='text' name='class' />
+              </div>
+            </div>
+            <div className='fs'>
+
+              <div >
+                <label htmlFor='formNo'>Name  :</label>
+                <input type='text' name='formNo' />
+              </div>
+           
+              <div >
+                <label htmlFor='fatherNameTwo'>Father's Name:</label>
+                <input type='text' name='fatherNameTwo' />
+              </div>
+              <div >
+                <label htmlFor='dobTwo'>DOB:</label>
+                <input type='date' name='dobTwo' />
+              </div>
+              
+            </div>
+
+
+            <div className='footer'>
+              <div className=''>
+              <input type='text' name='receivedBy' />
+                <label htmlFor='receivedBy'>Received By :</label>
+              
+              </div>
+              {/* second column  */}
+              <div className=''>
+              <input type='text' name='signAuthority' />
+                <label htmlFor='signAuthority'>Signature of the  School Authority :</label>
+                
+              </div>
+            </div>
 
 
           </form>
         </div>
       </section>
+    
     </div>
   );
 }

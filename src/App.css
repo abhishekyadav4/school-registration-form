@@ -139,3 +139,70 @@ margin-top: 10px;
  
 }
 
+/* signature css  */
+
+.signature{
+  /* background-color: rebeccapurple; */
+  width: 100%;
+  height: max-content;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.common-sign{
+
+  width: 25%;
+  height: 100%;
+}
+
+.sign-input input{
+  width: 100%;
+  margin-bottom: 1%;
+}
+.sign-label{
+  text-align: center;
+}
+
+/* :horizontal line  */
+hr.btm{
+width: 100%;
+
+ margin-top: 1.5%;
+}
+
+/* form footer  */
+
+.footer{
+ 
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+  margin-top: 1%;
+  font-weight:400
+}
+.footer-section{
+ /* background-color: green; */
+ width: 20%;
+}
+.footer-section input{
+  margin-left: 4%;
+}
+
+.footerSecond{
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1%;
+}
+.footerSecond input{
+  margin-left: 10px;
+}
+.fs{
+  margin-top: 1%;
+  width: 100%;
+  display: inline-flex;
+ gap: 20%;
+}
+
+
