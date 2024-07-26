@@ -1,5 +1,6 @@
 
 
+import axios from 'axios';
 import React, { useState } from 'react'
 
 function Register() {
@@ -60,26 +61,37 @@ function Register() {
   const handleChange = (e) => {
 
     const { name, value } = e.target;
-    console.log(name, value)
+    // console.log(name, value)
     setForm({ ...getForm, [name]: value })
   }
 
   const handleSubmit = (e) => {
+    // http://localhost:8000/api/v1/students/regi  
     e.preventDefault()
     const { studentName, gender, adhar,tc,studentHeight,studentWeight,fatherName,fOccupation,fAnnualIncome, motherName,
       mOccupation,religion,caste,cwsn,cwsnType,guardianName,bankName,accNo,ifscCode,micrCode,branchName,branchCode,
       bloodGroup,nationality,idMark,bpl,address,post,ps,block,dist,pinCode,contactNo,admissionClass,firtAdmission,
       declaration,signOfStudent,signOfGaurdian,signOfHeadMaster,formNo,dateTwo,receivedAppNo,admissionNo,dateThree,
-      studentClass,nameTwo,fatherNameTwo,dobTwo,receivedBy,signAuthority
+      studentClas,nameTwo,fatherNameTwo,dobTwo,receivedBy,signAuthority
     } = getForm
     
+    axios.post('http://localhost:8000/api/v1/students/regi',{
+      studentName, gender, adhar,tc,studentHeight,studentWeight,fatherName,fOccupation,fAnnualIncome, motherName,
+      mOccupation,religion,caste,cwsn,cwsnType,guardianName,bankName,accNo,ifscCode,micrCode,branchName,branchCode,
+      bloodGroup,nationality,idMark,bpl,address,post,ps,block,dist,pinCode,contactNo,admissionClass,firtAdmission,
+      declaration,signOfStudent,signOfGaurdian,signOfHeadMaster,formNo,dateTwo,receivedAppNo,admissionNo,dateThree,
+      studentClas,nameTwo,fatherNameTwo,dobTwo,receivedBy,signAuthority
+    })
+    .then((res) => {
+      console.log(res.data)
+    })
     
   }
   return (
     <>
 
 
-      <div className="App">
+      <div className="container">
         <nav>
           <div className='mainHead'>
             <h1>application form for admission</h1>
@@ -101,7 +113,7 @@ function Register() {
 
         <section>
           <div className='photo'>
-            <h4>photo</h4>
+            <p>photo</p>
           </div>
         </section>
 
@@ -418,9 +430,9 @@ function Register() {
                     onChange={handleChange} value={getForm.dateThree} />
                 </div>
                 <div >
-                  <label htmlFor='studentClass'>Class:</label>
-                  <input type='text' name='studentClass'
-                    onChange={handleChange} value={getForm.studentClass} />
+                  <label htmlFor='studentClas'>Class:</label>
+                  <input type='text' name='studentClas'
+                    onChange={handleChange} value={getForm.studentClas} />
                 </div>
               </div>
 

@@ -3,22 +3,25 @@
   padding: 0%;
   box-sizing: border-box;
 }
-.App{
+.container{
   width: 98%;
   height: max-content;
   border: 1px solid black;
   margin: auto;
+  /* background-color: red; */
   
 }
 
 /* navbar  */
 .mainHead{
   width: 100%;
-  height: 138px;
+
+  padding-bottom: 15px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
   border: 1px solid black;
+  /* background-color: aqua; */
 }
 #sh{
   text-transform: capitalize
@@ -240,4 +243,220 @@ width: 100%;
 .btn button:hover{
   background-color: rgb(173, 229, 251);
   border: none;
+}
+
+
+/* responsive  */
+
+@media screen and (max-width:599px){
+
+
+  .container{
+      /* width: fit-content;
+      height: max-content;
+      position: relative; */
+      width: 98%;
+      margin: auto;
+      height: fit-content; 
+  }
+
+  .mainHead{
+    width: 100%;
+   /* background-color: red; */
+    text-transform: uppercase;
+    border: 1px solid black;
+    font-weight: 100;
+    font-size: smaller;
+    text-align: center;  
+    padding-bottom: 10px;
+  }
+  .mainHead h1,h4, h5{
+/* color: antiquewhite; */
+    font-size: 7px;
+    margin-right: 50px;
+  }
+  .right-box{
+    width: 160px;
+    /* background-color: green; */
+    position: absolute;
+  right: 0%;   
+  }
+
+  .photo{
+    /* background-color: aqua; */
+    width: 100px;
+    height: 100px;
+    
+  }
+
+  .mainBody, ol, .formData{
+    width: 100%;
+    /* background-color: beige; */
+    font-weight: 400;
+    font-size: small;
+  }
+
+.common-input{
+  /* background-color: green; */
+ width:160px ;
+}
+.common-input input{
+  /* background-color: green; */
+  width:100%;
+  height: 23px;
+}
+
+.signature{
+  /* background-color: white; */
+  width: max-content;
+  margin-top: 2%;
+}
+.footer{
+  /* background-color: violet; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+}
+.footer-section{
+  width: inherit;
+  font-weight: 400;
+}
+
+.footerSecond{
+
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 5px;
+
+}
+.footerSecond label{
+  font-weight: 400;
+}
+
+.nfd{
+
+width: min-content;
+font-weight: 400;
+}
+.confirmation{
+
+  margin-top: 1%;
+  font-weight: 400;
+  width: auto;
+}
+.btn{
+ padding: 5px 5px;
+  
+}
+
+}
+
+@media screen and (min-width:600px) and (max-width:1200px) {
+  
+  .container{
+ 
+  width: 98%;
+  margin: auto;
+  height: fit-content; 
+  }
+
+  .mainHead h1,h4, h5{
+    margin-right: 4%;
+    font-weight: 500;
+    font-size: medium;
+    }
+  .right-box{
+   width: 200px;
+   right: 1%;
+  }
+
+  .photo{
+    right: 1%;
+   margin-top: 1%;
+    width: 100px;
+    height: 150px;
+    
+  }
+
+  .mainBody, ol, .formData{
+    font-weight: 600;
+ height: fit-content;
+  }
+
+.common-input{
+width: fit-content;
+
+}
+.common-input input{
+
+ width: fit-content;
+
+}
+.common-label{
+
+  width: fit-content;
+  font-weight: 400;
+  font-size: small;
+}
+
+.signature{
+ font-weight: 400;
+}
+.footer{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ 
+}
+.footer-section{
+
+width: 39%;
+font-weight: 400;
+}
+
+.footerSecond{
+text-align: center;
+}
+.footerSecond label{
+  width: fit-content;
+  font-weight: 400;
+  font-size: small;
+  text-align: center;
+ 
+
+}
+.footerSecond input{
+  width: fit-content;
+  font-size: small;
+}
+
+.nfd{
+
+text-align: center;
+font-weight: 500;
+}
+.confirmation{
+
+width: auto;
+text-align: center;
+font-weight: 500;
+ 
+}
+.btn{
+padding: 10px 5px;
+  
+}
+.p-txt{
+  font-size: small;
+}
+.md input{
+
+  height: 30px;
+}
+
 }
