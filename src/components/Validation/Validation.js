@@ -15,6 +15,8 @@
     // const email_pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     const digit_pattern = /^\d+$/;
+    const pin_code = /^\d{3}\s?\d{3}$/;
+   const phone= /^\+?[1-9]\d{1,14}$/ ;
 
     if(formValues.admNo === ""){
         errors.admNo = "Adm no needed";
@@ -178,6 +180,77 @@
         errors.nationality= "Nationality Required";
         isValid = false;
     }
+    if(formValues.idMark===""){
+        errors.idMark= "Id Mark Required";
+        isValid = false;
+    }
+
+    if(formValues.bpl === ""){
+        errors.bpl = "BPL No. is Required";
+        isValid = false;
+    }else if(!digit_pattern.test(formValues.bpl)){
+        errors.bpl = "Number is allowed Only";
+        isValid = false;
+    }
+
+    if(formValues.address === ""){
+        errors.address = "Address is Required";
+        isValid = false;
+    }
+    if(formValues.addresspost === ""){
+        errors.addresspost = "Address post is Required";
+        isValid = false;
+    }
+
+    if(formValues.ps === ""){
+        errors.ps = "PS post is Required";
+        isValid = false;
+    }
+
+    if(formValues.addressBlock === ""){
+        errors.addressBlock = "Address Block is Required";
+        isValid = false;
+    }
+
+    if(formValues.dist=== ""){
+        errors.dist= "Dist is required";
+        isValid = false;
+    }
+
+    if(formValues.pinCode=== ""){
+        errors.pinCode= "PinCode is required";
+        isValid = false;
+    } else if(!pin_code.test(formValues.pinCode)){
+        errors.pinCode = "Code must be of 6 digits";
+        isValid = false;
+    }
+
+    if(formValues.contact=== ""){
+        errors.contact= "Contact is required";
+        isValid = false;
+    }else if(!phone.test(formValues.contact)){
+        errors.contact = "Valid Phone No. is allowed";
+        isValid = false;
+    }
+
+    if(formValues.soughtAdmission === ""){
+        errors.soughtAdmission= "Sought Admission is Required";
+        isValid= false
+    }
+
+    if(formValues.firstAdmission === ""){
+        errors.firstAdmission= "First Admission is Required";
+        isValid= false
+    }
+
+    if(formValues.declaration === ""){
+        errors.declaration= "Declaration is Required";
+        isValid= false
+    }
+
+
+
+
 
 
     return {errors, isValid}

@@ -34,6 +34,18 @@ function StudentReg() {
         branchCode: '',
         bloodGroup: '',
         nationality: '',
+        idMark: '',
+        bpl: '',
+        address: '',
+        addresspost: '',
+        ps: '',
+        addressBlock: '',
+        dist: '',
+        pinCode: '',
+        contact: '',
+        soughtAdmission: '',
+        firstAdmission: '',
+        declaration: '',
     }
     const [formValues, setFormValues] = useState(intialValues);
 
@@ -347,7 +359,7 @@ function StudentReg() {
                                             <label htmlFor='religion'>RELIGION :  </label>
                                         </div>
                                         <div className='formInput '>
-                                            <input type='date' name='religion'
+                                            <input type='text' name='religion'
                                                 value={formValues.religion}
                                                 onChange={handleChange} />
                                             <p className='errors'>
@@ -570,11 +582,265 @@ function StudentReg() {
                                         </div>
                                     </div>
                                 </div>
-
                             </li>
 
-                            <button>submit</button>
+                            {/* line 12  */}
+                            <li>
+                                <div className='fomInfoTwo'>
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='idMark'>Identification Mark :   </label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='idMark'
+                                                value={formValues.idMark}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.idMark && <span>{errors.idMark}</span>}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    {/* relation with guardian  */}
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='bpl'>BPL YES/NO(If Yes Mention Card Number) :</label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='bpl'
+                                                value={formValues.bpl}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.bpl && <span>{errors.bpl}</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <p className='note'>
+                                N.B.: Only Father of the student or in case of Father being dead, the Mother of the student will
+                                be the legal Guardian and he / she should put his / her signature on the admission register at
+                                the time of admission. In case of Father and Mother both being dead any other nearest relative of
+                                the student may be the Guardian or proper declaration in respect of above.
+                            </p>
+
+                            {/* line 13  */}
+                            <li>
+                                <div className='fomInfo'>
+
+                                    <div className='formLabelName'>
+                                        <label htmlFor='address'>Present Address: Village/Town :  </label>
+                                    </div>
+                                    <div className='nameInput'>
+                                        <input type='text' name='address'
+                                            value={formValues.address}
+                                            onChange={handleChange} />
+                                        <p className='errors'>
+                                            {errors.address && <span>{errors.address}</span>}
+                                        </p>
+                                    </div>
+                                </div>
+                                {/* post  */}
+                                <div className='fomInfoTwo'>
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='addresspost'>Post :   </label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='addresspost'
+                                                value={formValues.addresspost}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.addresspost && <span>{errors.addresspost}</span>}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    {/* ps */}
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='ps'> P.S :</label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='ps'
+                                                value={formValues.ps}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.ps && <span>{errors.ps}</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* 3 block */}
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='addressBlock'>Block :</label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='addressBlock'
+                                                value={formValues.addressBlock}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.addressBlock && <span>{errors.addressBlock}</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                {/* dist  */}
+                                <div className='fomInfoTwo'>
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='dist'>Dist :   </label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='dist'
+                                                value={formValues.dist}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.dist && <span>{errors.dist}</span>}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    {/* pin */}
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='pinCode'> PIN Code :</label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='pinCode'
+                                                value={formValues.pinCode}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.pinCode && <span>{errors.pinCode}</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {/* 3 block */}
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='contact'>Contact No. :</label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='contact'
+                                                value={formValues.contact}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.contact && <span>{errors.contact}</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            {/* line 14  */}
+
+                            <li>
+                                <div className='fomInfoTwo'>
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='soughtAdmission'>Class in which is admission sought :   </label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='soughtAdmission'
+                                                value={formValues.soughtAdmission}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.soughtAdmission && <span>{errors.soughtAdmission}</span>}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                    {/* relation with guardian  */}
+                                    <div className='common'>
+                                        <div className='formLabel'>
+                                            <label htmlFor='firstAdmission'>Whether first admission or not :</label>
+                                        </div>
+                                        <div className='formInput '>
+                                            <input type='text' name='firstAdmission'
+                                                value={formValues.firstAdmission}
+                                                onChange={handleChange} />
+                                            <p className='errors'>
+                                                {errors.firstAdmission && <span>{errors.firstAdmission}</span>}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
                         </ol>
+                        {/* declaration  */}
+
+                        <div className='declare'>
+
+                            DECLARATION : I <span>
+                                <input type='text' name='declaration' value={formValues.declaration}
+                                    onChange={handleChange} />
+
+                            </span>.
+                            <span>  may be declare that the particulars given by  me are true and correct.
+                                I further declare that I shall abide by the rules and regulations as well as
+                                discipline of the School strictly without being prejudiced.
+                            </span>
+                            <span className='declareError' >
+                                {errors.declaration && <span>{errors.declaration}</span>}
+                            </span>
+                        </div>
+
+
+                        {/* signatures  */}
+                        <div className='sign'>
+                            <div className='common-sign'>
+
+                                <div className='sign-input '>
+                                    <input type='text' name='soughtAdmission'
+                                        value={formValues.soughtAdmission}
+                                        onChange={handleChange} />
+                                    <p className='errors'>
+                                        {errors.soughtAdmission && <span>{errors.soughtAdmission}</span>}
+                                    </p>
+                                </div>
+                                <div className='sign-label'>
+                                    <label htmlFor='studentSign'> Signature of the Student   </label>
+                                </div>
+
+                            </div>
+                            {/* relation with guardian  */}
+                            <div className='common-sign'>
+
+                                <div className='sign-input '>
+                                    <input type='text' name='firstAdmission'
+                                        value={formValues.firstAdmission}
+                                        onChange={handleChange} />
+                                    <p className='errors'>
+                                        {errors.firstAdmission && <span>{errors.firstAdmission}</span>}
+                                    </p>
+                                </div>
+                                <div className='sign-label'>
+                                    <label htmlFor='firstAdmission'>Signature of Parents or Guardians</label>
+                                </div>
+                            </div>
+
+                            <div className='common-sign'>
+
+                                <div className='sign-input '>
+                                    <input type='text' name='firstAdmission'
+                                        value={formValues.firstAdmission}
+                                        onChange={handleChange} />
+                                    <p className='errors'>
+                                        {errors.firstAdmission && <span>{errors.firstAdmission}</span>}
+                                    </p>
+                                </div>
+                                <div className='sign-label'>
+                                    <label htmlFor='firstAdmission'>Signature of the Head Master</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button>submit</button>
+
                     </form >
 
                 </div>
