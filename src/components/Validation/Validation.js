@@ -34,10 +34,10 @@
         isValid = false;
     }
 
-    // if(formValues.gender===""){
-    //     errors.gender= "gender must be required";
-    //     isValid = false;
-    // }
+    if(formValues.gender===""){
+        errors.gender= "gender must be required";
+        isValid = false;
+    }
 
     // if(formValues.email ===""){
     //     errors.email= "email is required";
@@ -235,20 +235,87 @@
 
     if(formValues.soughtAdmission === ""){
         errors.soughtAdmission= "Sought Admission is Required";
-        isValid= false
+        isValid= false;
     }
 
     if(formValues.firstAdmission === ""){
         errors.firstAdmission= "First Admission is Required";
-        isValid= false
+        isValid= false;
     }
 
     if(formValues.declaration === ""){
         errors.declaration= "Declaration is Required";
-        isValid= false
+        isValid= false;
+    }
+
+    if(formValues.studentSign  === ""){
+        errors.studentSign= "Signature Required";
+        isValid= false;
+    }
+    if(formValues.guardianSign  === ""){
+        errors.guardianSign= "Signature Required";
+        isValid= false;
+    }
+
+    if(formValues.headMasterSign  === ""){
+        errors.headMasterSign= "Signature Required";
+        isValid= false;
+    }
+
+    if(formValues.formNo === ''){
+        errors.formNo= "Form Num Required";
+        isValid =false;
+    }else if(!digit_pattern.test(formValues.formNo)){
+        errors.formNo= "Only Numbers allowed";
+        isValid= false;
+    }
+
+    if(formValues.receivedapNo === ''){
+        errors.receivedapNo= "Received App No. Required";
+        isValid =false;
+    }else if(!digit_pattern.test(formValues.receivedapNo)){
+        errors.receivedapNo= "Only Numbers allowed";
+        isValid= false;
+    }
+
+    if(formValues.applicationNo === ''){
+        errors.applicationNo= "Application No. Required";
+        isValid =false;
+    }else if(!digit_pattern.test(formValues.applicationNo)){
+        errors.applicationNo= "Only Numbers allowed";
+        isValid= false;
+    }
+
+    if(formValues.studenClass === ''){
+        errors.studenClass= "Class Required";
+        isValid =false;
+    }else if(!digit_pattern.test(formValues.studenClass)){
+        errors.studenClass= "Only Numbers allowed";
+        isValid= false;
+    }
+
+    if(formValues.nameTwo === ''){
+        errors.nameTwo= " Name Required";
+        isValid =false;
+    }
+
+    if(formValues.fatherNameTwo === ''){
+        errors.fatherNameTwo= "Father Name Required";
+        isValid =false;
+    }
+
+    if(formValues.receivedBy === ''){
+        errors.receivedBy= "Received By Required";
+        isValid =false;
+    }
+    
+    if(formValues.schoolAuthSign === ''){
+        errors.schoolAuthSign= "Authority sign Required";
+        isValid =false;
     }
 
 
+    
 
 
 

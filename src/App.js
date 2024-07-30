@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import StudentReg from './components/RegistrationFrom/StudentReg';
+import StudentReg from './components/StudentAcc/StudentReg';
 
 function App() {
   return (

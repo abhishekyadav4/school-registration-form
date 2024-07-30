@@ -1,52 +1,68 @@
 
 import React, { useState } from 'react'
 import { Validation } from '../Validation/Validation';
+import axios from 'axios';
+
 
 function StudentReg() {
 
     const intialValues = {
-        admNo: '',
-        admDate: '',
-        studentName: '',
-        gender: '',
-        adharNo: '',
-        dobOne: '',
-        tc: '',
-        studentHeight: '',
-        studentWeight: '',
-        fatherName: '',
-        fCoccupation: '',
-        fAnnualIncome: '',
-        motherName: '',
-        mOccupation: '',
-        mAnnualIncome: '',
-        religion: '',
-        caste: '',
-        cwsn: '',
-        cwsnType: '',
-        guardianName: '',
-        guardianRelation: '',
-        bankName: '',
-        acNo: '',
-        ifsc: '',
-        micrCode: '',
-        branchName: '',
-        branchCode: '',
-        bloodGroup: '',
-        nationality: '',
-        idMark: '',
-        bpl: '',
-        address: '',
-        addresspost: '',
-        ps: '',
-        addressBlock: '',
-        dist: '',
-        pinCode: '',
-        contact: '',
-        soughtAdmission: '',
-        firstAdmission: '',
-        declaration: '',
+        admNo: "",
+        admDate: "",
+        studentName: "",
+        gender: "",
+        adharNo: "",
+        dobOne: "",
+        tc: "",
+        studentHeight: "",
+        studentWeight: "",
+        fatherName: "",
+        fCoccupation: "",
+        fAnnualIncome: "",
+        motherName: "",
+        mOccupation: "",
+        mAnnualIncome: "",
+        religion: "",
+        caste: "",
+        cwsn: "",
+        cwsnType: "",
+        guardianName: "",
+        guardianRelation: "",
+        bankName: "",
+        acNo: "",
+        ifsc: "",
+        micrCode: "",
+        branchName: "",
+        branchCode: "",
+        bloodGroup: "",
+        nationality: "",
+        idMark: "",
+        bpl: "",
+        address: "",
+        addresspost: "",
+        ps: "",
+        addressBlock: "",
+        dist: "",
+        pinCode: "",
+        contact: "",
+        soughtAdmission: "",
+        firstAdmission: "",
+        declaration: "",
+        studentSign: "",
+        guardianSign: "",
+        headMasterSign: "",
+        formNo: "",
+        dateOne: "",
+        receivedapNo: "",
+        applicationNo: "",
+        studenClass: "",
+        dateTwo: "",
+        nameTwo: "",
+        fatherNameTwo: "",
+        receivedBy: "",
+        schoolAuthSign: ""
     }
+
     const [formValues, setFormValues] = useState(intialValues);
 
     const [errors, setErrors] = useState({});
@@ -54,7 +70,7 @@ function StudentReg() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name, value);
+        // console.log(name, value);
         setFormValues({
             ...formValues,
             [name]: value
@@ -64,12 +80,18 @@ function StudentReg() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
         //validation
         const { errors, isValid } = Validation(formValues);
 
         if (isValid) {
+            axios.post('http://localhost:8000/api/v1/students/regi', formValues)
+                .then((res) => {
+                    console.log(res.data);
+                   
+                }).catch((error) =>
+                    console.log(error))
             console.log("form submitted", formValues);
+            alert("form submitted")
 
             setErrors({});
         } else {
@@ -792,15 +814,16 @@ function StudentReg() {
 
 
                         {/* signatures  */}
+
                         <div className='sign'>
                             <div className='common-sign'>
 
                                 <div className='sign-input '>
-                                    <input type='text' name='soughtAdmission'
-                                        value={formValues.soughtAdmission}
+                                    <input type='text' name='studentSign'
+                                        value={formValues.studentSign}
                                         onChange={handleChange} />
-                                    <p className='errors'>
-                                        {errors.soughtAdmission && <span>{errors.soughtAdmission}</span>}
+                                    <p className='sign-errors'>
+                                        {errors.studentSign && <span>{errors.studentSign}</span>}
                                     </p>
                                 </div>
                                 <div className='sign-label'>
@@ -808,15 +831,16 @@ function StudentReg() {
                                 </div>
 
                             </div>
+
                             {/* relation with guardian  */}
                             <div className='common-sign'>
 
                                 <div className='sign-input '>
-                                    <input type='text' name='firstAdmission'
-                                        value={formValues.firstAdmission}
+                                    <input type='text' name='guardianSign'
+                                        value={formValues.guardianSign}
                                         onChange={handleChange} />
-                                    <p className='errors'>
-                                        {errors.firstAdmission && <span>{errors.firstAdmission}</span>}
+                                    <p className='sign-errors'>
+                                        {errors.guardianSign && <span>{errors.guardianSign}</span>}
                                     </p>
                                 </div>
                                 <div className='sign-label'>
@@ -827,11 +851,11 @@ function StudentReg() {
                             <div className='common-sign'>
 
                                 <div className='sign-input '>
-                                    <input type='text' name='firstAdmission'
-                                        value={formValues.firstAdmission}
+                                    <input type='text' name='headMasterSign'
+                                        value={formValues.headMasterSign}
                                         onChange={handleChange} />
-                                    <p className='errors'>
-                                        {errors.firstAdmission && <span>{errors.firstAdmission}</span>}
+                                    <p className='sign-errors'>
+                                        {errors.headMasterSign && <span>{errors.headMasterSign}</span>}
                                     </p>
                                 </div>
                                 <div className='sign-label'>
@@ -839,7 +863,156 @@ function StudentReg() {
                                 </div>
                             </div>
                         </div>
-                        <button>submit</button>
+
+
+                        <hr className='horizontal'></hr>
+
+
+                        {/* footers of form  */}
+
+                        {/* line 1 */}
+
+                        <div className='form-footer'>
+                            <div className='footer-common'>
+                                <label >
+                                    Form No. :
+                                    <input className="footer-input" type='text' name='formNo'
+                                        value={formValues.formNo} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.formNo && <span>{errors.formNo}</span>}
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div className='footer-common'>
+                                <label >
+                                    Date :
+                                    <input className="footer-input" type='date' name='dateOne'
+                                        value={formValues.dateOne} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.dateOne && <span>{errors.dateOne}</span>}
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+
+
+                        {/* line2  */}
+
+                        <div className='form-footer'>
+                            <div className='footer-common'>
+                                <label >
+                                    Received application Form No :
+                                    <input className="footer-input" type='text' name='receivedapNo'
+                                        value={formValues.receivedapNo} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.receivedapNo && <span>{errors.receivedapNo}</span>}
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div className='footer-common'>
+                                <label >
+                                    Admission No :
+                                    <input className="footer-input" type='text' name='applicationNo'
+                                        value={formValues.applicationNo} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.applicationNo && <span>{errors.applicationNo}</span>}
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div className='footer-common'>
+                                <label >
+                                    Date :
+                                    <input className="footer-input" type='date' name='dateTwo'
+                                        value={formValues.dateTwo} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.dateTwo && <span>{errors.dateTwo}</span>}
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div className='footer-common'>
+                                <label >
+                                    Class :
+                                    <input className="footer-input" type='text' name='studenClass'
+                                        value={formValues.studenClass} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.studenClass && <span>{errors.studenClass}</span>}
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+
+
+                        {/* line 3  */}
+
+                        <div className='form-footer'>
+                            <div className='footer-common'>
+                                <label >
+                                    Name :
+                                    <input className="footer-input" type='text' name='nameTwo'
+                                        value={formValues.nameTwo} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.nameTwo && <span>{errors.nameTwo}</span>}
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div className='footer-common'>
+                                <label >
+                                    Father's Name :
+                                    <input className="footer-input" type='text' name='fatherNameTwo'
+                                        value={formValues.fatherNameTwo} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.fatherNameTwo && <span>{errors.fatherNameTwo}</span>}
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div className='footer-common'>
+                                <label >
+                                    DOB :
+                                    <input className="footer-input" type='date' name='dobTwo'
+                                        value={formValues.dobTwo} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.dobTwo && <span>{errors.dobTwo}</span>}
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+                        {/* line 4  */}
+
+                        <div className='form-footer'>
+                            <div className='footer-common'>
+                                <label >
+                                    Received By :
+                                    <input className="footer-input" type='text' name='receivedBy'
+                                        value={formValues.receivedBy} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.receivedBy && <span>{errors.receivedBy}</span>}
+                                    </p>
+                                </label>
+                            </div>
+
+                            <div className='footer-common'>
+                                <label >
+                                    Signature Of School Authority :
+                                    <input className="footer-input" type='text' name='schoolAuthSign'
+                                        value={formValues.schoolAuthSign} onChange={handleChange} />
+                                    <p className='footer-errors'>
+                                        {errors.schoolAuthSign && <span>{errors.schoolAuthSign}</span>}
+                                    </p>
+                                </label>
+                            </div>
+                        </div>
+
+                        {/* button  */}
+                        <div className='btn'>
+                            <button>submit</button>
+                        </div>
+
 
                     </form >
 
