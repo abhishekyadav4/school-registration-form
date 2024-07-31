@@ -1,12 +1,16 @@
 
+import { Outlet } from 'react-router-dom';
 import './App.css';
+import Header from './components/Navbar/Header';
 
-import StudentReg from './components/StudentAcc/StudentReg';
+
 
 function App() {
   return (
     <>
-  <StudentReg/>
+    <Header/>
+    <Outlet/>
+ 
     </>
   );
 }

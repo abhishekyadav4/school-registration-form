@@ -4,6 +4,33 @@
   box-sizing: border-box;
 }
 
+.navbar{
+  /* background-color: red; */
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+}
+.navbar a{
+  text-decoration: none;
+  font-size: large;
+  font-weight: 500;
+}
+
+.home{
+text-align: center;
+margin-top: 3%;
+
+}
+.home a{
+  text-decoration: none;
+  margin: 2px 2px;
+  font-weight:400;
+  font-size: medium;
+}
+/* Student registration  */
+
 .container {
   width: 98%;
   height: max-content;
@@ -41,25 +68,28 @@ hr {
   height: max-content;
   border: 1px solid black;
   position: absolute;
-  top: 3px;
+  top: 3.2rem;
   right: 18px;
- 
+
 }
 
 .right-txt {
   width: 100%;
   height: 25px;
- margin-top: 1%;
+  margin-top: 1%;
 }
-.right-txtdate{
- 
+
+.right-txtdate {
+
   margin-top: 1rem;
 }
-.right-date input{
-margin-left: 1.5rem;
-width: 10rem;
-text-align: center;
+
+.right-date input {
+  margin-left: 1.5rem;
+  width: 10rem;
+  text-align: center;
 }
+
 .err {
   color: red;
   width: 98%;
@@ -67,7 +97,7 @@ text-align: center;
   margin: auto;
   /* background-color: black; */
   font-size: smaller;
- 
+
 }
 
 
@@ -147,7 +177,7 @@ ol {
 
 
 .fomInfoTwo {
-/* background-color: rebeccapurple; */
+  /* background-color: rebeccapurple; */
   width: 85%;
   display: flex;
   align-items: center;
@@ -174,141 +204,183 @@ ol {
   width: 100%;
 }
 
-.note, .declare{
+.note,
+.declare {
   margin-top: 2%;
-  
+
 }
-.declareError{
+
+.declareError {
   color: red;
   margin-left: 1%;
 }
 
 /* signature sign  */
-.sign{
- 
+.sign {
+
   margin-top: 2%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.common-sign{
+
+.common-sign {
 
   width: 20%;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
 }
-.sign-input{
+
+.sign-input {
   width: 100%;
 }
-.sign-input input{
+
+.sign-input input {
   width: 100%;
   padding: 3px 3px;
 }
-.sign-label{
-  margin-top :2%;
+
+.sign-label {
+  margin-top: 2%;
 }
 
-.sign-errors{
-color: red;
+.sign-errors {
+  color: red;
 }
-.horizontal{
+
+.horizontal {
   width: 100%;
   margin-top: 2%;
 }
 
 /* footers  */
-.form-footer{
+.form-footer {
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 2%;
 }
-.footer-common{
+
+.footer-common {
 
   width: 20%;
 }
-.footer-input{
+
+.footer-input {
   margin-left: 2%;
 }
-.footer-errors{
- 
+
+.footer-errors {
+
   text-align: center;
   color: red;
 }
 
-.btn{
- 
- margin-top: 1%;
+.btn {
+
+  margin-top: 1%;
   padding: 2px 2px;
   text-align: center;
 }
-.btn button{
+
+.btn button {
   width: 8%;
   height: auto;
 }
+
+
+/* for Read files  */
+
+.studentDetails {
+  /* background-color: red; */
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.studentDetails table,
+th,
+td {
+  margin-top: 2%;
+  width: 600px;
+  padding: 5px 5px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+
+
+}
+
 /* media qureis  */
 
 /* Styles for mobile devices (portrait and landscape) */
-@media only screen  and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
 
   /* Your mobile styles here */
-  .container{
-  width: 98%;
+  .container {
+    width: 98%;
   }
-/* .mainHead{
+
+  /* .mainHead{
   background-color: aqua;
 
 } */
-.mainHead h1,h4, h5{
-  font-size: small;
-  font-weight: 600;
+  .mainHead h1,
+  h4,
+  h5 {
+    font-size: small;
+    font-weight: 600;
 
-}
-  
-.photo{
-  display: none;
-}
-  .form-main{
+  }
+
+  .photo {
+    display: none;
+  }
+
+  .form-main {
     /* background-color: rgb(249, 214, 214); */
     width: 96%;
     margin: auto;
     font-size: small;
   }
 
-  .nameInput input{
+  .nameInput input {
     padding: 1px 1px;
     width: 15rem;
-   }
+  }
 
   /* .fomInfo{
     background-color: aqua;
   } */
-  .fomInfoTwo{
+  .fomInfoTwo {
     /* background-color: #fff; */
     width: 100%;
     gap: 2%;
   }
- .formLabel{
-  /* background-color: blanchedalmond; */
-  width: 9.5rem;
- }
- 
- .formInput input{
-  /* background-color: rebeccapurple; */
-  padding: 0.5px 0.5px;
 
- }
+  .formLabel {
+    /* background-color: blanchedalmond; */
+    width: 9.5rem;
+  }
 
- .errors {
-  color: red;
-  font-weight: 200;
-  font-size: smaller;
-  position: absolute;
-  top: 1.2rem;
-  text-align: center;
-}
+  .formInput input {
+    /* background-color: rebeccapurple; */
+    padding: 0.5px 0.5px;
+
+  }
+
+  .errors {
+    color: red;
+    font-weight: 200;
+    font-size: smaller;
+    position: absolute;
+    top: 1.2rem;
+    text-align: center;
+  }
 
 }
 
